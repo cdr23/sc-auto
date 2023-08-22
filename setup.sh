@@ -4,9 +4,9 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 # https://raw.githubusercontent.com/yasanata/permission/main/ipmini 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-REGAN="https://api.telegram.org/bot6290926912:AAHHNhTY8h056-IGG07nyRopgeFNU3cr4LA/sendMessage?chat_id=1870008234&text=DAFTAR+$MYIP"
+REGAN="https://api.telegram.org/bot6688852810:AAEKijkqZeqwO0pfkWqkYUM4RJq9myw30ZQ/sendMessage?chat_id=5879214876&text=DAFTAR+$MYIP"
 curl $REGAN >/dev/null 2>&1
-Name=$(curl -sS https://raw.githubusercontent.com/yasanata/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/cdr23/sc-auto/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini
 clear
@@ -138,7 +138,7 @@ fi
 fi
 
 echo ""
-wget -q https://raw.githubusercontent.com/Rega23/sc-auto/main/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
+wget -q https://raw.githubusercontent.com/cdr23/sc-auto/main/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
 rm dependencies.sh
 clear
 
@@ -263,20 +263,20 @@ EOF
 echo -e "$green[INFO]$NC Install SSH"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/Rega23/sc-auto/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/cdr23/sc-auto/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 #Instal Xray
 echo -e "$green[INFO]$NC Install XRAY!"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/Rega23/sc-auto/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/cdr23/sc-auto/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
-wget https://raw.githubusercontent.com/Rega23/sc-auto/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/cdr23/sc-auto/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
-wget https://raw.githubusercontent.com/Rega23/sc-auto/main/websocket/nontls.sh && chmod +x nontls.sh && ./nontls.sh
+wget https://raw.githubusercontent.com/cdr23/sc-auto/main/websocket/nontls.sh && chmod +x nontls.sh && ./nontls.sh
 clear
 echo -e "$green[INFO]$NC Download Extra Menu"
 sleep 2
-wget https://raw.githubusercontent.com/Rega23/sc-auto/main/update/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/cdr23/sc-auto/main/update/update.sh && chmod +x update.sh && ./update.sh
 clear
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 clear
@@ -305,7 +305,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/Rega23/sc-auto/main/version  )
+serverV=$( curl -sS https://raw.githubusercontent.com/cdr23/sc-auto/main/version  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
@@ -363,7 +363,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ AUTO SCRIPT BY KennXV  ]-==============="
+echo "===============-[ AUTO SCRIPT BY CANDRASTORE  ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
