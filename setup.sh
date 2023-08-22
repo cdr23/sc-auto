@@ -4,8 +4,6 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 # https://raw.githubusercontent.com/cdr23/sc-auto/permission/main/ipmini 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-REGAN="https://api.telegram.org/bot6688852810:AAEKijkqZeqwO0pfkWqkYUM4RJq9myw30ZQ/sendMessage?chat_id=5879214876&text=DAFTAR+$MYIP"
-curl $REGAN >/dev/null 2>&1
 Name=$(curl -sS https://raw.githubusercontent.com/cdr23/sc-auto/permission/main/ipmini | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini
