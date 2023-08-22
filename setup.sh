@@ -2,7 +2,7 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-# https://raw.githubusercontent.com/yasanata/permission/main/ipmini 
+# https://raw.githubusercontent.com/cdr23/sc-auto/permission/main/ipmini 
 MYIP=$(curl -sS ipv4.icanhazip.com)
 REGAN="https://api.telegram.org/bot6688852810:AAEKijkqZeqwO0pfkWqkYUM4RJq9myw30ZQ/sendMessage?chat_id=5879214876&text=DAFTAR+$MYIP"
 curl $REGAN >/dev/null 2>&1
