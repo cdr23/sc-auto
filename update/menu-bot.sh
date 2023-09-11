@@ -41,7 +41,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/Rega23/cdr23/main/permission/ipmini | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/cdr23/main/permission/ipmini | grep $MYIP | awk '{print $2}')
 Isadmin=$(curl -sS https://raw.githubusercontent.com/cdr23/sc-auto/main/permission/ipmini | grep $MYIP | awk '{print $5}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
