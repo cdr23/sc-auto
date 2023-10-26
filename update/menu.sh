@@ -187,7 +187,7 @@ echo -e "  ${COLOR1}[04]${NC} • [${YELLOW}Menu${NC}] TROJAN    ${COLOR1}[10]${
 echo -e "  ${COLOR1}[05]${NC} • [${YELLOW}Menu${NC}] SS WS     ${COLOR1}[11]${NC} • ADD HOST/DOMAIN  $COLOR1│$NC"
 echo -e "  ${COLOR1}[06]${NC} • [${YELLOW}Menu${NC}] SET DNS   ${COLOR1}[12]${NC} • RENEW CERT       $COLOR1│$NC"
 if [ "$Isadmin" = "ON" ]; then
-echo -e "                                                  $COLOR1│$NC"
+echo -e "                                                                     $COLOR1│$NC"
 echo -e "  ${COLOR1}[13]${NC} • [${YELLOW}Menu${NC}] REG IP    ${COLOR1}[14]${NC} • [${YELLOW}Menu${NC}] SET BOT   $COLOR1│$NC"
 ressee="menu-ip"
 bottt="menu-bot"
