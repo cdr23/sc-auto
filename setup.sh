@@ -30,59 +30,38 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 fi
 
 localip=$(hostname -I | cut -d\  -f1)
+localip=$(hostname -I | cut -d\  -f1)
 hst=( `hostname` )
 dart=$(cat /etc/hosts | grep -w `hostname` | awk '{print $2}')
 if [[ "$hst" != "$dart" ]]; then
 echo "$localip $(hostname)" >> /etc/hosts
 fi
+if [ -f "/root/log-install.txt" ]; then
+rm -fr /root/log-install.txt
+fi
 mkdir -p /etc/xray
+mkdir -p /etc/v2ray
+touch /etc/xray/domain
+touch /etc/v2ray/domain
+touch /etc/xray/scdomain
+touch /etc/v2ray/scdomain
 
-secs_to_human() {
-    echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
-}
-start=$(date +%s)
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 
-coreselect=''
-cat> /root/.profile << END
-# ~/.profile: executed by Bourne-compatible login shells.
-
-if [ "$BASH" ]; then
-  if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-  fi
-fi
-
-mesg n || true
-clear
-END
-chmod 644 /root/.profile
-
-echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 apt install git curl -y >/dev/null 2>&1
-sleep 3
+apt install python -y >/dev/null 2>&1
+echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
+sleep 2
 
-mkdir -p /etc/aixxy7
-mkdir -p /etc/aixxy7/theme
-mkdir -p /var/lib/aixxy7-pro >/dev/null 2>&1
-echo "IP=" >> /var/lib/aixxy7-pro/ipvps.conf
 
-if [ -f "/etc/xray/domain" ]; then
-echo ""
-echo -e "[ ${green}INFO${NC} ] Script Already Installed"
-echo -ne "[ ${yell}WARNING${NC} ] Do you want to install again ? (y/n)? "
-read answer
-if [ "$answer" == "${answer#[Yy]}" ] ;then
-rm setup.sh
-sleep 10
-exit 0
-else
-clear
-fi
-fi
+mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
+echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 
+sudo at install squid -y
+sudo apt install net-tools -y
+sudo apt install vnstat -y
 echo ""
 wget -q https://raw.githubusercontent.com/cdr23/sc-auto/main/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
 rm dependencies.sh
