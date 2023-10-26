@@ -37,48 +37,6 @@ echo "$localip $(hostname)" >> /etc/hosts
 fi
 mkdir -p /etc/xray
 
-echo -e "[ ${tyblue}NOTES${NC} ] Before we go.. "
-sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] I need check your headers first.."
-sleep 2
-echo -e "[ ${green}INFO${NC} ] Checking headers"
-sleep 1
-totet=`uname -r`
-REQUIRED_PKG="linux-headers-$totet"
-PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
-echo Checking for $REQUIRED_PKG: $PKG_OK
-if [ "" = "$PKG_OK" ]; then
-  sleep 2
-  echo -e "[ ${yell}WARNING${NC} ] Try to install ...."
-  echo "No $REQUIRED_PKG. Setting up $REQUIRED_PKG."
-  apt-get --yes install $REQUIRED_PKG
-  sleep 1
-  echo ""
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] If error you need.. to do this"
-  sleep 1
-  echo ""
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] 1. apt update -y"
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] 2. apt upgrade -y"
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] 3. apt dist-upgrade -y"
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] 4. reboot"
-  sleep 1
-  echo ""
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] After rebooting"
-  sleep 1
-  echo -e "[ ${tyblue}NOTES${NC} ] Then run this script again"
-  echo -e "[ ${tyblue}NOTES${NC} ] Notes, Script Mod By PapaBearS"
-  echo -e "[ ${tyblue}NOTES${NC} ] if you understand then tap enter now.."
-  read
-else
-  echo -e "[ ${green}INFO${NC} ] Oke installed"
-fi
-
 ttet=`uname -r`
 ReqPKG="linux-headers-$ttet"
 if ! dpkg -s $ReqPKG  >/dev/null 2>&1; then
@@ -276,6 +234,7 @@ echo -e "$green[INFO]$NC Download Extra Menu"
 sleep 2
 wget https://raw.githubusercontent.com/cdr23/sc-auto/main/update/update.sh && chmod +x update.sh && ./update.sh
 clear
+wger https://raw.githubusercontent.com/scscp/xraylite/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 clear
 cat> /root/.profile << END
