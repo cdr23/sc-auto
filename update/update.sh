@@ -22,6 +22,7 @@ wget -q -O /usr/bin/rebootvps "https://raw.githubusercontent.com/cdr23/sc-auto/m
 wget -q -O /usr/bin/menu-dns "https://raw.githubusercontent.com/cdr23/sc-auto/main/update/menu-dns.sh" && chmod +x /usr/bin/menu-dns
 wget -q -O /usr/bin/info "https://raw.githubusercontent.com/cdr23/sc-auto/main/update/info.sh" && chmod +x /usr/bin/info
 wget -q -O /usr/bin/mspeed "https://raw.githubusercontent.com/cdr23/sc-auto/main/update/menu-speedtest.sh" && chmod +x /usr/bin/mspeed
+wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/scscp/xraylite/main/menu-backup.sh" && chmod +x /usr/bin/menu-backup
 wget -q -O /usr/bin/mbandwith "https://raw.githubusercontent.com/cdr23/sc-auto/main/update/menu-bandwith.sh" && chmod +x /usr/bin/mbandwith
 echo -e " [INFO] Update Successfully"
 sleep 2
